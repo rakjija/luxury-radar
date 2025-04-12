@@ -13,6 +13,7 @@ services:
       MYSQL_PASSWORD: password
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/conf.d/client.cnf 
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
